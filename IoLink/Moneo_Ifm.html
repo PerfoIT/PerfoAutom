@@ -4,26 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutoriel IO-Link avec moneo configure</title>
-  <link rel="stylesheet" href="/assets/css/perfo-tutos.css">
+  <link rel="stylesheet" href="../assets/css/perfo-tutos.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap">
-      <div class="brand">
-        <img src="/assets/img/logo-perfo-blanc.svg" alt="Logo Perfo">
-        <div>
-          <strong>Tutoriel atelier</strong><br>
-          Configuration IO-Link avec moneo configure
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="topbar">
+        <div class="brand">
+          <img src="../assets/img/logo-perfo-blanc.svg" alt="Logo PERFO">
+          <div class="brand-text">Tutoriel atelier</div>
         </div>
+        <a class="home-link" href="../index.html">Retour au portail</a>
       </div>
-      <div class="hero">
-        <h1>Configurer un capteur IO-Link avec moneo configure</h1>
-        <p>Procédure complète pour se connecter au réseau WiFi, atteindre le serveur moneo, détecter les masters IO-Link, paramétrer un capteur et vérifier les valeurs process.</p>
-      </div>
+      <div class="hero-kicker">IO-Link - ifm moneo</div>
+      <h1>Configurer un capteur IO-Link avec moneo configure</h1>
+      <p class="header-subtitle">Procédure complète pour se connecter au réseau WiFi, atteindre le serveur moneo, détecter les masters IO-Link, paramétrer un capteur et vérifier les valeurs process.</p>
     </div>
   </header>
 
-  <main>
+  <main class="container">
     <section>
       <h2>Objectif du tutoriel</h2>
       <p>
@@ -257,7 +256,6 @@ ipconfig /all</pre>
 tracert 192.168.10.20
 powershell -Command "Test-NetConnection 192.168.10.20 -Port 443"</pre>
           <p>Remplacer 192.168.10.20 par l'adresse IP réelle du serveur. Si moneo utilise HTTP au lieu de HTTPS, tester le port 80 à la place du port 443.</p>
-        
         </div>
 
         <div class="step">
@@ -267,8 +265,8 @@ powershell -Command "Test-NetConnection 192.168.10.20 -Port 443"</pre>
           <pre class="cmd">https://192.168.10.20
 http://192.168.10.20</pre>
           <figure class="image-frame narrow">
-            <img src="/assets/img/ecran_connexion_moneo.png" alt="Connexion à moneo configure">
-            <figcaption>Connexion à moneo configure. </figcaption>
+            <img src="../assets/img/ecran_connexion_moneo.png" alt="Connexion à moneo configure">
+            <figcaption>Connexion à moneo configure.</figcaption>
           </figure>
         </div>
 
@@ -281,11 +279,15 @@ http://192.168.10.20</pre>
 tracert 192.168.10.101</pre>
           <p>Si plusieurs masters sont présents, tester chaque IP connue : 192.168.10.101, 192.168.10.102, 192.168.10.103, etc.</p>
           <figure class="image-frame">
-            <img src="/assets/img/scan_reseaux_2.png" alt="Fenêtre de scanning du réseau dans moneo configure">
+            <img src="../assets/img/scan_reseaux_2.png" alt="Fenêtre de scanning du réseau dans moneo configure">
             <figcaption>Fenêtre de scanning du réseau : choisir le réseau entier, une adresse précise ou une plage IP selon le besoin.</figcaption>
           </figure>
           <figure class="image-frame">
-            <img src="/assets/img/liste_master.png" alt="Liste des masters IO-Link détectés dans moneo configure">
+            <img src="../assets/img/scan_reseau_moneo.png" alt="Résultat du scan réseau dans moneo configure">
+            <figcaption>Résultat du scan réseau avant ajout des équipements détectés.</figcaption>
+          </figure>
+          <figure class="image-frame">
+            <img src="../assets/img/liste_master.png" alt="Liste des masters IO-Link détectés dans moneo configure">
             <figcaption>Liste des masters IO-Link détectés : vérifier le nom, l'adresse IP et l'état de communication.</figcaption>
           </figure>
         </div>
@@ -295,7 +297,7 @@ tracert 192.168.10.101</pre>
           <p>Ouvrir la vue du master et consulter l'état de chaque port. Le port où le capteur est raccordé doit être configuré en mode IO-Link lorsque l'on veut paramétrer un capteur intelligent. Les ports non utilisés peuvent rester désactivés ou configurés selon les standards du site.</p>
           <p>Si un capteur n'apparaît pas, vérifier le port physique, le câble, l'alimentation capteur, la compatibilité IO-Link, puis relancer la recherche. Un capteur câblé sur un port configuré en entrée/sortie numérique simple peut ne pas remonter comme appareil IO-Link.</p>
           <figure class="image-frame">
-            <img src="/assets/img/liste_capteur.png" alt="Liste des capteurs IO-Link raccordés au master">
+            <img src="../assets/img/liste_capteur.png" alt="Liste des capteurs IO-Link raccordés au master">
             <figcaption>Liste des capteurs IO-Link vus par moneo configure après détection des ports du master.</figcaption>
           </figure>
         </div>
@@ -502,5 +504,9 @@ tracert 192.168.10.101</pre>
       </ul>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">PERFO Autom - Tutoriel IO-Link</div>
+  </footer>
 </body>
 </html>
